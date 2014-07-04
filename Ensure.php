@@ -25,7 +25,11 @@ namespace twentysteps\Commons\EnsureBundle;
  * errors early with a meaningful message. The message may be generated in sprintf fashion like
  * shown in the following example:
  *
- * Ensure::ensureTrue($user->isValid(), 'user [%s] is not valid', $user->getId());
+ * Ensure::isTrue($user->isValid(), 'user [%s] is not valid', $user->getId());
+ *
+ * All functions do return the checked value, so the check and assignment may occur in one line:
+ *
+ * $this->name = Ensure::isNotNull($name, 'name must not be null');
  */
 final class Ensure {
 
@@ -35,130 +39,158 @@ final class Ensure {
 
     /**
      * Fails with the given message if $value is null: $value === null.
+     * @return mixed
      */
-    public static function ensureNotNull($value, $format, $args = null, $_ = null) {
+    public static function isNotNull($value, $format, $args = null, $_ = null) {
         if ($value === null) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value is not null: $value !== null.
+     * @return mixed
      */
-    public static function ensureNull($value, $format, $args = null, $_ = null) {
+    public static function isNull($value, $format, $args = null, $_ = null) {
         if ($value !== null) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value is not empty: !empty($value).
+     * @return mixed
      */
-    public static function ensureEmpty($value, $format, $args = null, $_ = null) {
+    public static function isEmpty($value, $format, $args = null, $_ = null) {
         if (!empty($value)) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value is empty: empty($value).
+     * @return mixed
      */
-    public static function ensureNotEmpty($value, $format, $args = null, $_ = null) {
+    public static function isNotEmpty($value, $format, $args = null, $_ = null) {
         if (empty($value)) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
 
     /**
      * Fails with the given message if $value is not true: !$value.
+     * @return mixed
      */
-    public static function ensureTrue($value, $format, $args = null, $_ = null) {
+    public static function isTrue($value, $format, $args = null, $_ = null) {
         if (!$value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value is true: $value.
+     * @return mixed
      */
-    public static function ensureFalse($value, $format, $args = null, $_ = null) {
+    public static function isFalse($value, $format, $args = null, $_ = null) {
         if ($value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value not equal: ($expected != $value).
+     * @return mixed
      */
-    public static function ensureEquals($expected, $value, $format, $args = null, $_ = null) {
+    public static function isEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected != $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value equal: ($expected != $value).
+     * @return mixed
      */
-    public static function ensureNotEquals($expected, $value, $format, $args = null, $_ = null) {
+    public static function isNotEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected == $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value <= $expected.
+     * @return mixed
      */
-    public static function ensureGreaterThan($expected, $value, $format, $args = null, $_ = null) {
+    public static function isGreaterThan($expected, $value, $format, $args = null, $_ = null) {
         if ($expected >= $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value < $expected.
+     * @return mixed
      */
-    public static function ensureGreaterThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
+    public static function isGreaterThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected > $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value >= $expected.
+     * @return mixed
      */
-    public static function ensureLessThan($expected, $value, $format, $args = null, $_ = null) {
+    public static function isLessThan($expected, $value, $format, $args = null, $_ = null) {
         if ($expected <= $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value > $expected.
+     * @return mixed
      */
-    public static function ensureLessThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
+    public static function isLessThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected < $value) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**
      * Fails with the given message if $value is not instanceof $cl: !($value instanceof $cl).
+     * @return mixed
      */
-    public static function ensureInstanceOf($cl, $value, $format, $args = null, $_ = null) {
+    public static function isInstanceOf($cl, $value, $format, $args = null, $_ = null) {
         if (!($value instanceof $cl)) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
 
     /**
      * Fails with the given message if $value is instanceof $cl: ($value instanceof $cl).
+     * @return mixed
      */
-    public static function ensureNotInstanceOf($cl, $value, $format, $args = null, $_ = null) {
+    public static function isNotInstanceOf($cl, $value, $format, $args = null, $_ = null) {
         if ($value instanceof $cl) {
             self::fail($format, $args, $_);
         }
+        return $value;
     }
 
     /**

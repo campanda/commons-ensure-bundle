@@ -33,9 +33,11 @@ use twentysteps\Commons\EnsureBundle\Ensure;
 
 class Foo {
 
+    private $name;
+
     public function bar($entityName, $num) {
-        Ensure::ensureNotEmpty($entityName, 'entityName must not be empty');
-        Ensure::ensureGreaterThan(0, $num, 'num must be positive for entityName [%s]', $entityName);
+        $this->name = Ensure::isNotEmpty($entityName, 'entityName must not be empty');
+        Ensure::isGreaterThan(0, $num, 'num must be positive for entityName [%s]', $entityName);
         // do some stuff...
     }
 }
