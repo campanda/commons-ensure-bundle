@@ -60,6 +60,28 @@ final class Ensure {
     }
 
     /**
+     * Fails with the given message if the variable $value is not set or null: !isset($value).
+     * @return mixed
+     */
+    public static function isExisting(&$value, $format, $args = null, $_ = null) {
+        if (!isset($value)) {
+            self::fail($format, $args, $_);
+        }
+        return $value;
+    }
+
+    /**
+     * Fails with the given message if the variable $value is set: isset($value).
+     * @return mixed
+     */
+    public static function isNotExisting(&$value, $format, $args = null, $_ = null) {
+        if (isset($value)) {
+            self::fail($format, $args, $_);
+        }
+        return $value;
+    }
+
+    /**
      * Fails with the given message if $value is not empty: !empty($value).
      * @return mixed
      */
