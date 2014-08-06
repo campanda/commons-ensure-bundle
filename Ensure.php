@@ -33,6 +33,8 @@ namespace twentysteps\Commons\EnsureBundle;
  */
 final class Ensure {
 
+    // TODO refactor varargs when switching to newer PHP version (>= 5.6)
+    
     private function __construct() {
         // no instantiation possible
     }
