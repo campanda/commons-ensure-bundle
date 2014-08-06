@@ -43,7 +43,7 @@ final class Ensure {
      */
     public static function isNotNull($value, $format, $args = null, $_ = null) {
         if ($value === null) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -54,7 +54,7 @@ final class Ensure {
      */
     public static function isNull($value, $format, $args = null, $_ = null) {
         if ($value !== null) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -65,7 +65,7 @@ final class Ensure {
      */
     public static function isExisting(&$value, $format, $args = null, $_ = null) {
         if (!isset($value)) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -76,7 +76,7 @@ final class Ensure {
      */
     public static function isNotExisting(&$value, $format, $args = null, $_ = null) {
         if (isset($value)) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -87,7 +87,7 @@ final class Ensure {
      */
     public static function isEmpty($value, $format, $args = null, $_ = null) {
         if (!empty($value)) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -98,7 +98,7 @@ final class Ensure {
      */
     public static function isNotEmpty($value, $format, $args = null, $_ = null) {
         if (empty($value)) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -110,7 +110,7 @@ final class Ensure {
      */
     public static function isTrue($value, $format, $args = null, $_ = null) {
         if (!$value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -121,7 +121,7 @@ final class Ensure {
      */
     public static function isFalse($value, $format, $args = null, $_ = null) {
         if ($value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 2));
         }
         return $value;
     }
@@ -132,7 +132,7 @@ final class Ensure {
      */
     public static function isEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected != $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -143,7 +143,7 @@ final class Ensure {
      */
     public static function isNotEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected == $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -154,7 +154,7 @@ final class Ensure {
      */
     public static function isGreaterThan($expected, $value, $format, $args = null, $_ = null) {
         if ($expected >= $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -165,7 +165,7 @@ final class Ensure {
      */
     public static function isGreaterThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected > $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -176,7 +176,7 @@ final class Ensure {
      */
     public static function isLessThan($expected, $value, $format, $args = null, $_ = null) {
         if ($expected <= $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -187,7 +187,7 @@ final class Ensure {
      */
     public static function isLessThanOrEqual($expected, $value, $format, $args = null, $_ = null) {
         if ($expected < $value) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -198,7 +198,7 @@ final class Ensure {
      */
     public static function isInstanceOf($cl, $value, $format, $args = null, $_ = null) {
         if (!($value instanceof $cl)) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -210,7 +210,7 @@ final class Ensure {
      */
     public static function isNotInstanceOf($cl, $value, $format, $args = null, $_ = null) {
         if ($value instanceof $cl) {
-            self::fail($format, $args, $_);
+            self::vfail($format, array_slice(func_get_args(), 3));
         }
         return $value;
     }
@@ -221,6 +221,16 @@ final class Ensure {
      * case of a switch.
      */
     public static function fail($format, $args = null, $_ = null) {
-        throw new EnsureException(sprintf($format, $args, $_));
+        throw new EnsureException(vsprintf($format, array_slice(func_get_args(), 1)));
     }
+
+    /**
+     * Simply fails with the given message in sprintf format. May be used when
+     * the code has reached a point where it shouldn't be, for example the default
+     * case of a switch.
+     */
+    private static function vfail($format, $args) {
+        throw new EnsureException(vsprintf($format, $args));
+    }
+
 }

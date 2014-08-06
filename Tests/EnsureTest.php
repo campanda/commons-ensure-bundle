@@ -41,8 +41,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNotNullFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isNotNull(null, 'check %s failed', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNotNull(null, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureNull() {
@@ -50,8 +50,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNullFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isNull('hello', 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNull('hello', 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureExisting() {
@@ -60,9 +60,9 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureExistingFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $arr = array('b' => 'b');
-        Ensure::isExisting($arr['a'], 'check %s', 1);
+        Ensure::isExisting($arr['a'], 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureNotExisting() {
@@ -71,9 +71,9 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNotExistingFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $arr = array('a' => 'b');
-        Ensure::isNotExisting($arr['a'], 'check %s', 1);
+        Ensure::isNotExisting($arr['a'], 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureEmpty() {
@@ -83,8 +83,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureEmptyFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 failed');
-        Ensure::isEmpty('hello', 'check %s failed', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isEmpty('hello', 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureNotEmpty() {
@@ -94,8 +94,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNotEmptyFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isNotEmpty('', 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNotEmpty('', 'check %s %s %s', 1, 2, 3);
     }
 
 
@@ -104,8 +104,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureTrueFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isTrue(1 == 2, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isTrue(1 == 2, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureFalse() {
@@ -113,8 +113,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureFalseFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isFalse(1 == 1, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isFalse(1 == 1, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureEquals() {
@@ -122,8 +122,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureEqualsFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isEqual(1, 2, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isEqual(1, 2, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureNotEquals() {
@@ -131,8 +131,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNotEqualsFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isNotEqual(1, 1, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNotEqual(1, 1, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureGreaterThan() {
@@ -140,8 +140,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureGreaterThanFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isGreaterThan(1, 1, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isGreaterThan(1, 1, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureGreaterThanOrEqual() {
@@ -150,8 +150,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureGreaterThanOrEqualFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isGreaterThanOrEqual(1, 0, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isGreaterThanOrEqual(1, 0, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureLessThan() {
@@ -159,8 +159,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureLessThanFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isLessThan(1, 1, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isLessThan(1, 1, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureLessThanOrEqual() {
@@ -169,8 +169,8 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureLessThanOrEqualFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::isLessThanOrEqual(1, 2, 'check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isLessThanOrEqual(1, 2, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testEnsureInstanceOf() {
@@ -179,9 +179,9 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureInstanceOfFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $a = new Bar();
-        $this->assertEquals($a, Ensure::isInstanceOf('twentysteps\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
+        $this->assertEquals($a, Ensure::isInstanceOf('twentysteps\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3));
     }
 
 
@@ -191,13 +191,13 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
     }
 
     public function testEnsureNotInstanceOfFailed() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $a = new Foo();
-        Ensure::isNotInstanceOf('twentysteps\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1);
+        Ensure::isNotInstanceOf('twentysteps\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testFail() {
-        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1');
-        Ensure::fail('check %s', 1);
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::fail('check %s %s %s', 1, 2, 3);
     }
 }
