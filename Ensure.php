@@ -218,6 +218,17 @@ final class Ensure {
     }
 
     /**
+     * Fails with the given message if $value is not a valid number.
+     * @return mixed
+     */
+    public static function isNumeric($value, $format, $args = null, $_ = null) {
+        if (!is_numeric($value)) {
+            self::vfail($format, array_slice(func_get_args(), 2));
+        }
+        return $value;
+    }
+
+    /**
      * Simply fails with the given message in sprintf format. May be used when
      * the code has reached a point where it shouldn't be, for example the default
      * case of a switch.

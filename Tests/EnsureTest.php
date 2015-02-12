@@ -45,6 +45,31 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
         Ensure::isNotNull(null, 'check %s %s %s', 1, 2, 3);
     }
 
+    public function testEnsureNumeric1() {
+        $value = 1;
+        $this->assertEquals(1, Ensure::isNumeric($value, 'check'));
+    }
+
+    public function testEnsureNumeric2() {
+        $value = '77';
+        $this->assertEquals('77', Ensure::isNumeric($value, 'check'));
+    }
+
+    public function testEnsureNumericFailed1() {
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNumeric(null, 'check %s %s %s', 1, 2, 3);
+    }
+
+    public function testEnsureNumericFailed2() {
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNumeric('', 'check %s %s %s', 1, 2, 3);
+    }
+
+    public function testEnsureNumericFailed3() {
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isNumeric('hel', 'check %s %s %s', 1, 2, 3);
+    }
+
     public function testEnsureNull() {
         $this->assertEquals(null, Ensure::isNull(null, 'check'));
     }
