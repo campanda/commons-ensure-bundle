@@ -10,6 +10,11 @@
             "name": "Marc Ewert",
             "email": "marc.ewert@20steps.de",
             "homepage": "https://20steps.de"
+        },
+        {
+            "name": "Helmut Hoffer von Ankershoffen",
+            "email": "hhva@20steps.de",
+            "homepage": "https://20steps.de"
         }
     ],
     "require": {

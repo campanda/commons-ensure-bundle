@@ -4,7 +4,8 @@
 [![Packagist version](https://img.shields.io/packagist/v/20steps/commons-ensure-bundle.svg)](https://packagist.org/packages/20steps/commons-ensure-bundle)
 
 
-## About
+About
+-----
 
 The 20steps Commons Ensure Bundle contains static helper functions for checking coding pre-/post-conditions. The check
 helps to fail early with a EnsureException in the case of missmatched assertions with a meaningful sprintf format
@@ -12,23 +13,21 @@ message. In comparison to PHP's assert() command, the ensure checks are always e
 
 The 20steps Commons Ensure Bundle is licensed under the LGPL license version 3.0 (http://www.gnu.org/licenses/lgpl-3.0.html).
 
-## Installation
+Installation
+------------
 
-Require the bundle by adding the following entry to the respective section of your composer.json:
+1. Add the bundle to your composer.json and download a matching version by calling
 
-```
-"20steps/commons-ensure-bundle": "dev-master"
-```
-
-Get the bundle via packagist from GitHub by calling:
-
-```
-php composer.phar update 20steps/commons-ensure-bundle
+```bash
+composer require 20steps/common-ensure-bundle
 ```
 
-## Usage
+Prerequisite: Install [**Composer**][1], the dependency manager used by modern PHP applications.
 
-The following code shows some simple method calls using the Ensure Bundle.
+Usage
+-----
+
+The following code shows some simple method call using the Ensure Bundle.
 
 ```
 <?php
@@ -47,8 +46,16 @@ class Foo {
 }
 ```
 
-## Author
+Authors
+-------
 
-Marc Ewert (marc.ewert@20steps.de)
+Marc Ewert <marc.ewert@20steps.de>
+Helmut Hoffer von Ankershoffen <hhva@20steps.de>
 
-sponsored by: <a href="http://20steps.de">20steps - Digital Full Service Boutique</a>
+Sponsored by
+------------
+
+[**20steps - Digital Full Service Boutique**][2]
+
+[1]:  https://getcomposer.org/
+[2]:  https://20steps.de
