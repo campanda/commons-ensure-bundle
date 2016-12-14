@@ -49,8 +49,8 @@ class Foo {
 Authors
 -------
 
-Marc Ewert <marc.ewert@20steps.de>
-Helmut Hoffer von Ankershoffen <hhva@20steps.de>
+* Marc Ewert <marc.ewert@20steps.de>
+* Helmut Hoffer von Ankershoffen <hhva@20steps.de>
 
 Sponsored by
 ------------
