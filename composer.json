@@ -2,18 +2,18 @@
     "name": "20steps/commons-ensure-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle with static helper functions for checking coding pre-/post-conditions",
-    "keywords": ["sf2", "symfony2", "assert"],
+    "keywords": ["symfony","sf2","symfony2", "sf3", "symfony3", "assert","20steps","ensure","defensive coding"],
     "homepage": "https://github.com/20steps/commons-ensure-bundle",
     "license": "LGPL-3.0+",
     "authors": [
         {
             "name": "Marc Ewert",
             "email": "marc.ewert@20steps.de",
-            "homepage": "http://20steps.de"
+            "homepage": "https://20steps.de"
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~2.3"
+        "symfony/framework-bundle": "~2.3|~3.0"
     },
     "autoload": {
         "psr-0": {

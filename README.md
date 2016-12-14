@@ -1,5 +1,9 @@
 # 20steps/commons-ensure-bundle (twentystepsCommonsEnsureBundle)
 
+[![Build Status](https://travis-ci.org/20steps/commons-ensure-bundle.svg?branch=master)](https://travis-ci.org/20steps/commons-ensure-bundle)
+[![Packagist version](https://img.shields.io/packagist/v/20steps/commons-ensure-bundle.svg)](https://packagist.org/packages/20steps/commons-ensure-bundle)
+
+
 ## About
 
 The 20steps Commons Ensure Bundle contains static helper functions for checking coding pre-/post-conditions. The check
