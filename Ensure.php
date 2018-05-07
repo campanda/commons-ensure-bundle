@@ -18,7 +18,7 @@
  * License along with this library.
  */
 
-namespace campanda\Commons\EnsureBundle;
+namespace Campanda\Commons\EnsureBundle;
 
 /**
  * Static helper for checking code preconditions and throwing an LogicException in the case of

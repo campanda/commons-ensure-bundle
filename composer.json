@@ -23,8 +23,8 @@
     },
     "autoload": {
         "psr-0": {
-            "campanda\\Commons\\EnsureBundle": ""
+            "Campanda\\Commons\\EnsureBundle": ""
         }
     },
-    "target-dir": "campanda/Commons/EnsureBundle"
+    "target-dir": "campanda/commons/EnsureBundle"
 }

@@ -18,9 +18,9 @@
  * License along with this library.
  */
 
-namespace campanda\Commons\EnsureBundle\Tests;
+namespace Campanda\Commons\EnsureBundle\Tests;
 
-use campanda\Commons\EnsureBundle\Ensure;
+use Campanda\Commons\EnsureBundle\Ensure;
 
 class Foo {
 }
@@ -33,7 +33,7 @@ class Bar {
  */
 final class EnsureTests extends \PHPUnit_Framework_TestCase {
 
-    const ENSURE_EXCEPTION = 'campanda\Commons\EnsureBundle\EnsureException';
+    const ENSURE_EXCEPTION = 'Campanda\Commons\EnsureBundle\EnsureException';
 
     public function testEnsureNotNull() {
         $value = 'hello world';
@@ -200,25 +200,25 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
 
     public function testEnsureInstanceOf() {
         $a = new Foo();
-        $this->assertEquals($a, Ensure::isInstanceOf('campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
+        $this->assertEquals($a, Ensure::isInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
     }
 
     public function testEnsureInstanceOfFailed() {
         $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $a = new Bar();
-        $this->assertEquals($a, Ensure::isInstanceOf('campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3));
+        $this->assertEquals($a, Ensure::isInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3));
     }
 
 
     public function testEnsureNotInstanceOf() {
         $a = new Bar();
-        $this->assertEquals($a, Ensure::isNotInstanceOf('campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
+        $this->assertEquals($a, Ensure::isNotInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
     }
 
     public function testEnsureNotInstanceOfFailed() {
         $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
         $a = new Foo();
-        Ensure::isNotInstanceOf('campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3);
+        Ensure::isNotInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3);
     }
 
     public function testFail() {

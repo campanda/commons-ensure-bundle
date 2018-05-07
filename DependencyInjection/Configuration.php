@@ -1,6 +1,6 @@
 <?php
 
-namespace campanda\Commons\EnsureBundle\DependencyInjection;
+namespace Campanda\Commons\EnsureBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

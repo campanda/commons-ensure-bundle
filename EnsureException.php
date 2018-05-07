@@ -18,7 +18,7 @@
  * License along with this library.
  */
 
-namespace campanda\Commons\EnsureBundle;
+namespace Campanda\Commons\EnsureBundle;
 
 /**
  * Exception thrown if an Ensure check has failed. See the exception message for details about the reason.
