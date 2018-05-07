@@ -46,7 +46,7 @@ Authors
 -------
 
 * Marc Ewert <marc.ewert@20steps.de>
-* Helmut Hoffer von Ankershoffen <hhva@Campanda.de>
+* Helmut Hoffer von Ankershoffen <hhva@campanda.com>
 
 Sponsored by
 ------------
