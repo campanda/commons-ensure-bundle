@@ -2,7 +2,7 @@
 
 /**
  * EnsureBundle
- * Copyright (c) 2014, 20steps Digital Full Service Boutique, All rights reserved.
+ * Copyright (c) 2018, Campanda GmbH, All rights reserved.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,7 +18,7 @@
  * License along with this library.
  */
 
-namespace twentysteps\Commons\EnsureBundle;
+namespace campanda\Commons\EnsureBundle;
 
 /**
  * Static helper for checking code preconditions and throwing an LogicException in the case of

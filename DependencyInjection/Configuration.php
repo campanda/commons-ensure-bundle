@@ -1,6 +1,6 @@
 <?php
 
-namespace twentysteps\Commons\EnsureBundle\DependencyInjection;
+namespace campanda\Commons\EnsureBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('twentysteps_commons_ensure');
+        $rootNode = $treeBuilder->root('campanda_commons_ensure');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

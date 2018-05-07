@@ -1,9 +1,9 @@
 {
-    "name": "20steps/commons-ensure-bundle",
+    "name": "campanda/commons-ensure-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle with static helper functions for checking coding pre-/post-conditions",
-    "keywords": ["symfony","sf2","symfony2", "sf3", "symfony3", "assert","20steps","ensure","defensive coding"],
-    "homepage": "https://github.com/20steps/commons-ensure-bundle",
+    "keywords": ["symfony","sf2","symfony2", "sf3", "symfony3", "sf4", "symfony4", "assert","Campanda","ensure","defensive coding"],
+    "homepage": "https://github.com/Campanda/commons-ensure-bundle",
     "license": "LGPL-3.0+",
     "authors": [
         {
@@ -13,8 +13,8 @@
         },
         {
             "name": "Helmut Hoffer von Ankershoffen",
-            "email": "hhva@20steps.de",
-            "homepage": "https://20steps.de"
+            "email": "hhva@Campanda.de",
+            "homepage": "https://Campanda.de"
         }
     ],
     "require": {
@@ -23,8 +23,8 @@
     },
     "autoload": {
         "psr-0": {
-            "twentysteps\\Commons\\EnsureBundle": ""
+            "campanda\\Commons\\EnsureBundle": ""
         }
     },
-    "target-dir": "twentysteps/Commons/EnsureBundle"
+    "target-dir": "campanda/Commons/EnsureBundle"
 }
