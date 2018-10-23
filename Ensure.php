@@ -127,6 +127,17 @@ final class Ensure {
         }
         return $value;
     }
+    
+    /**
+     * Fails with the given message if $value === false
+     * @return mixed
+     */
+    public static function isNotFalse($value, $format, $args = null, $_ = null) {
+        if ($value===false) {
+            self::vfail($format, array_slice(func_get_args(), 2));
+        }
+        return $value;
+    }
 
     /**
      * Fails with the given message if $value not equal: ($expected != $value).
