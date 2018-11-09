@@ -198,6 +198,16 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
         Ensure::isLessThanOrEqual(1, 2, 'check %s %s %s', 1, 2, 3);
     }
 
+    public function testEnsureIsOneOf() {
+        $a = 'a';
+        $this->assertEquals($a, Ensure::isOneOf([$a, 'b'], $a, 'check %s', 1));
+    }
+
+    public function testEnsureIsOneOfFailed() {
+        $this->setExpectedException(self::ENSURE_EXCEPTION, 'check 1 2 3');
+        Ensure::isOneOf(['a', 'b'], 'c', 'check %s %s %s', 1, 2, 3);
+    }
+
     public function testEnsureInstanceOf() {
         $a = new Foo();
         $this->assertEquals($a, Ensure::isInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s', 1));
@@ -208,7 +218,6 @@ final class EnsureTests extends \PHPUnit_Framework_TestCase {
         $a = new Bar();
         $this->assertEquals($a, Ensure::isInstanceOf('Campanda\Commons\EnsureBundle\Tests\Foo', $a, 'check %s %s %s', 1, 2, 3));
     }
-
 
     public function testEnsureNotInstanceOf() {
         $a = new Bar();
