@@ -240,6 +240,21 @@ final class Ensure {
     }
 
     /**
+     * @param array $values
+     * @param $value
+     * @param $format
+     * @param null $args
+     * @param null $_
+     * @return mixed
+     */
+    public static function isOneOf(array $values, $value, $format, $args = null, $_ = null) {
+        if (!in_array($value, $values)) {
+            self::vfail($format, array_slice(func_get_args(), 3));
+        }
+        return $value;
+    }
+
+    /**
      * Simply fails with the given message in sprintf format. May be used when
      * the code has reached a point where it shouldn't be, for example the default
      * case of a switch.
