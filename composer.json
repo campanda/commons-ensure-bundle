@@ -26,5 +26,5 @@
             "Campanda\\Commons\\EnsureBundle": ""
         }
     },
-    "target-dir": "campanda/Commons/EnsureBundle"
+    "target-dir": "Campanda/Commons/EnsureBundle"
 }
